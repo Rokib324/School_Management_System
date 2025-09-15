@@ -95,7 +95,7 @@ const menuItems = [
 import React from 'react'
 import Link from 'next/link'
 import { FaHome, FaUser, FaBook, FaClipboardList, FaTasks, FaClipboardCheck, FaCalendarAlt, FaComments, FaBullhorn, FaUserCircle, FaCog, FaSignOutAlt } from 'react-icons/fa'
-import { RiAdminFill, RiParentFill } from 'react-icons/ri'
+import { RiParentFill } from 'react-icons/ri'
 import { GiTeacher } from 'react-icons/gi'
 import { PiStudentFill } from 'react-icons/pi'
 
@@ -103,12 +103,10 @@ const Menu = () => {
   return (
     <div className='mt-4 text-sm'>
         {menuItems.map((item) => (
-            <div key={item.title} className='flex flex-col gap-2'>
-                <span className='hidden md:block'>{item.title}</span>
+            <div key={item.title} className='flex flex-col gap-2 ml-2'>
+                <span className='hidden lg:block text-gray-500 font-light my-2'>{item.title}</span>
                 {item.items.map((item) => (
-                    <Link href={item.href} key={item.label}>
-                        {item.icon}
-                        {item.label}
+                    <Link href={item.href} key={item.label} className='flex items-center justify-center lg:justify-start gap-4 p-4 text-gray-500 font-light py-2'>    <span>{item.icon}</span><span className='hidden lg:block'>{item.label}</span>
                     </Link>
                 ))}
             </div>
