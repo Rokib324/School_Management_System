@@ -3,6 +3,7 @@ import React from 'react'
 import { IoIosMore } from 'react-icons/io';
 import { FaFemale, FaMale } from 'react-icons/fa';
 import { RadialBarChart, RadialBar,ResponsiveContainer } from 'recharts';
+import Image from 'next/image';
 
 const data = [
   {
@@ -13,12 +14,12 @@ const data = [
   {
     name: 'Boys',
     Count: 53,
-    fill: '#FAE27C',
+    fill: '#C3EBFA',
   },
   {
     name: 'Girls',
     Count: 52,
-    fill: '#CFCEFF',
+    fill: '#FAE27C',
   },
   
 ];
@@ -35,7 +36,7 @@ const CountChart = () => {
         <span><IoIosMore /></span>
       </div>
       {/* Top Charts */}
-      <div className='w-full h-[75%]'>
+      <div className='w-full h-[75%] relative'>
       <ResponsiveContainer>
         <RadialBarChart cx="50%" cy="50%" innerRadius="40%" outerRadius="100%" barSize={32} data={data}>
           <RadialBar
@@ -45,9 +46,7 @@ const CountChart = () => {
           
         </RadialBarChart>
       </ResponsiveContainer>
-      <span><FaFemale className='text-yellow text-2xl'/>
-      <FaMale className='text-purple text-2xl'/>
-      </span>
+      <Image src="/maleFemale.png" alt="Female" width={50} height={50} className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'/>
       </div>
       {/* Bottom */}
       <div className='flex justify-center gap-16'>
@@ -56,7 +55,6 @@ const CountChart = () => {
             <h1 className='font-bold'>1,234</h1>
             <h2 className='text-xs text-gray-500'>Boys(55%)</h2>
         </div>
-
         <div className='flex flex-col gap-1'>
           <div className='w-5 h-5 bg-yellow rounded-full'/>
             <h1 className='font-bold'>1,000</h1>
