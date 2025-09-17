@@ -5,62 +5,74 @@ const menuItems = [
             {
                 icon: <FaHome />,
                 label: "Home",
-                href: "/"
+                href: "/",
+                visible: ["admin", "teacher", "student", "parent"]
             },
             {
                 icon: <GiTeacher />,
                 label: "Teacher",
-                href: "/teacher"
+                href: "/teacher",
+                visible: ["admin", "teacher"]
             },
             {
                 icon: <PiStudentFill />,
                 label: "Student",
-                href: "/student"
+                href: "/student",
+                visible: ["admin", "teacher"]
             },
             {
                 icon: <RiParentFill />,
                 label: "Parent",
-                href: "/parent"
+                href: "/parent",
+                visible: ["admin", "teacher"]
             },
             {
                 icon: <FaUser />,
                 label: "Classes",
-                href: "/classes"
+                href: "/classes",
+                visible: ["admin", "teacher", "student", "parent"]
             },
             {
                 icon: <FaBook />,
                 label: "Lessons",
-                href: "/lessons"
+                href: "/lessons",
+                visible: ["admin", "teacher", "student", "parent"]
             },
             {
                 icon: <FaClipboardList />,
                 label: "Exams",
-                href: "/exams"
+                href: "/exams",
+                visible: ["admin", "teacher", "student", "parent"]
             },
             {
                 icon: <FaTasks />,
                 label: "Assignments",
-                href: "/assignments"
+                href: "/assignments",
+                visible: ["admin", "teacher", "student", "parent"]
             },
             {
                 icon: <FaClipboardCheck />,
                 label: "Attendance",
-                href: "/attendance"
+                href: "/attendance",
+                visible: ["admin", "teacher", "student", "parent"]
             },
             {
                 icon: <FaCalendarAlt />,
                 label: "Events",
-                href: "/events"
+                href: "/events",
+                visible: ["admin", "teacher", "student", "parent"]
             },
             {
                 icon: <FaComments />,
                 label: "Messages",
-                href: "/messages"
+                href: "/messages",
+                visible: ["admin", "teacher", "student", "parent"]
             },
             {
                 icon: <FaBullhorn />,
                 label: "Announcements",
-                href: "/announcements"
+                href: "/announcements",
+                visible: ["admin", "teacher", "student", "parent"]
             }
         ]
     },
@@ -70,17 +82,20 @@ const menuItems = [
             {
                 icon: <FaUserCircle />,
                 label: "Profile",
-                href: "/profile"
+                href: "/profile",
+                visible: ["admin", "teacher", "student", "parent"]
             },
             {
                 icon: <FaCog />,
                 label: "Settings",
-                href: "/settings"
+                href: "/settings",
+                visible: ["admin", "teacher", "student", "parent"]
             },
             {
                 icon: <FaSignOutAlt />,
                 label: "Logout",
-                href: "/logout"
+                href: "/logout",
+                visible: ["admin", "teacher", "student", "parent"]
             }
         ]
     }

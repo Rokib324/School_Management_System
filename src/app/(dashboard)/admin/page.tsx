@@ -3,6 +3,8 @@ import CountChart from "@/components/CountChart";
 import React from "react";
 import AttendenceChart from "@/components/AttendenceChart";
 import FinanceChart from "@/components/FinanceChart";
+import EventCalendar from "@/components/EventCalendar";
+import Announcement from "@/components/Announcement";
 
 const AdminPage = () => {
   return (
@@ -33,9 +35,12 @@ const AdminPage = () => {
     <FinanceChart />
     </div>
     </div>
+
+
     {/* rightside */}
-    <div className="w-full lg:w-1/3">
-    rightside
+    <div className="w-full lg:w-1/3 flex flex-col gap-4">
+    <EventCalendar />
+    <Announcement />
     </div>
     </div>
   );
