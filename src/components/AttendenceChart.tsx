@@ -47,11 +47,11 @@ const AttendenceChart = () => {
           top: 5,
           right: 30,
           left: 20,
-          bottom: 5,
+          bottom: 10,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ddd" />
-        <XAxis dataKey="name" axisLine={false} tick={{fill: "#d1d5db"}} />
+        <XAxis dataKey="name" axisLine={false} tick={{fill: "#d1d5db"}}/>
         <YAxis axisLine={false} />
         <Tooltip />
         <Legend align="left" verticalAlign="top" wrapperStyle={{ paddingTop: '20px', paddingBottom: '20px'}} />
