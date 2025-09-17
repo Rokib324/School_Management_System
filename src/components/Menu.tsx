@@ -36,7 +36,7 @@ const menuItems = [
                 icon: <FaBook />,
                 label: "Lessons",
                 href: "/lessons",
-                visible: ["admin", "teacher", "student", "parent"]
+                visible: ["admin", "teacher", "student"]
             },
             {
                 icon: <FaClipboardList />,
@@ -60,13 +60,13 @@ const menuItems = [
                 icon: <FaCalendarAlt />,
                 label: "Events",
                 href: "/events",
-                visible: ["admin", "teacher", "student", "parent"]
+                visible: ["admin", "student", "parent"]
             },
             {
                 icon: <FaComments />,
                 label: "Messages",
                 href: "/messages",
-                visible: ["admin", "teacher", "student", "parent"]
+                visible: ["admin"]
             },
             {
                 icon: <FaBullhorn />,
@@ -113,6 +113,7 @@ import { FaHome, FaUser, FaBook, FaClipboardList, FaTasks, FaClipboardCheck, FaC
 import { RiParentFill } from 'react-icons/ri'
 import { GiTeacher } from 'react-icons/gi'
 import { PiStudentFill } from 'react-icons/pi'
+import { role } from '@/lib/data'
 
 const Menu = () => {
   return (
@@ -120,10 +121,14 @@ const Menu = () => {
         {menuItems.map((item) => (
             <div key={item.title} className='flex flex-col gap-2 ml-2'>
                 <span className='hidden lg:block text-gray-500 font-light my-2'>{item.title}</span>
-                {item.items.map((item) => (
-                    <Link href={item.href} key={item.label} className='flex items-center justify-center lg:justify-start gap-4 p-4 text-gray-500 font-light py-2'>    <span>{item.icon}</span><span className='hidden lg:block'>{item.label}</span>
+                {item.items.map((item) => {
+                    if(item.visible.includes(role)){
+                        return (
+                            <Link href={item.href} key={item.label} className='flex items-center justify-center lg:justify-start gap-4 p-4 text-gray-500 font-light py-2 rounded-md hover:bg-sky-light'>    <span>{item.icon}</span><span className='hidden lg:block'>{item.label}</span>
                     </Link>
-                ))}
+                        );
+                    }
+                })}
             </div>
         ))}
     </div>
