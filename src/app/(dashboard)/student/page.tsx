@@ -1,6 +1,7 @@
 'use client'
 import Announcement from "@/components/Announcement";
 import EventCalendar from "@/components/EventCalendar";
+import BigCalendar from "@/components/BigCalendar";
 import React from "react";
 
 const StudentPage = () => {
@@ -10,6 +11,7 @@ const StudentPage = () => {
       <div className='w-full xl:w-2/3'>
         <div className="h-full bg-white rounded-lg p-4">
           <h1 className="text-xl font-semibold">Schedule (4A)</h1>
+          <BigCalendar />
         </div>
       </div>
       {/* RIGHT SIDE */}
