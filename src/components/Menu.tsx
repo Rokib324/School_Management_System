@@ -11,7 +11,7 @@ const menuItems = [
             {
                 icon: <GiTeacher />,
                 label: "Teacher",
-                href: "/teacher",
+                href: "/list/teachers",
                 visible: ["admin", "teacher"]
             },
             {
