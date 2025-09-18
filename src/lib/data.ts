@@ -683,7 +683,7 @@ export const resultsData = [
     teacher: "Karim Uddin",
     student: "Fatima Akter",
     date: "2025-01-16",
-    type: "exam",
+    type: "assignment",
     score: 92,
   },
   {
@@ -703,7 +703,7 @@ export const resultsData = [
     teacher: "Dr. Mohammad Ali",
     student: "Nusrat Jahan",
     date: "2025-01-18",
-    type: "exam",
+    type: "CT",
     score: 90,
   },
   {
@@ -713,7 +713,7 @@ export const resultsData = [
     teacher: "Rashida Khatun",
     student: "Sadia Rahman",
     date: "2025-01-19",
-    type: "exam",
+    type: "RC",
     score: 95,
   },
   {
@@ -733,7 +733,7 @@ export const resultsData = [
     teacher: "Nusrat Jahan",
     student: "Rashida Begum",
     date: "2025-01-21",
-    type: "exam",
+    type: "project",
     score: 91,
   },
   {
@@ -914,8 +914,6 @@ export const announcementsData = [
   },
 ];
 
-
-// Updated calendar events with current dates and Bangladesh-specific subjects
 export const calendarEvents = [
   {
     title: "Math",

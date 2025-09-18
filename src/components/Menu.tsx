@@ -57,6 +57,12 @@ const menuItems = [
                 visible: ["admin", "teacher", "student", "parent"]
             },
             {
+                icon: <FaRegChartBar />,
+                label: "Results",
+                href: "/list/results",
+                visible: ["admin", "teacher", "student", "parent"]
+            },
+            {
                 icon: <FaClipboardCheck />,
                 label: "Attendance",
                 href: "/list/attendance",
@@ -115,7 +121,7 @@ const menuItems = [
 
 import React from 'react'
 import Link from 'next/link'
-import { FaHome, FaUser, FaBook, FaClipboardList, FaTasks, FaClipboardCheck, FaCalendarAlt, FaComments, FaBullhorn, FaUserCircle, FaCog, FaSignOutAlt } from 'react-icons/fa'
+import { FaHome, FaUser, FaBook, FaClipboardList, FaTasks, FaClipboardCheck, FaCalendarAlt, FaComments, FaBullhorn, FaUserCircle, FaCog, FaSignOutAlt, FaRegChartBar } from 'react-icons/fa'
 import { RiParentFill } from 'react-icons/ri'
 import { GiTeacher } from 'react-icons/gi'
 import { PiStudentFill } from 'react-icons/pi'
