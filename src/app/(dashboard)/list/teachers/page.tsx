@@ -107,7 +107,9 @@ const TeacherListPage = () => {
         <div className='flex items-center gap-4 self-end'>
         <button className='flex items-center justify-center rounded-full bg-yellow w-8 h-8'> <Image src="/filter.png" alt="filter" width={14} height={14} /> </button>
         <button className='flex items-center justify-center rounded-full bg-yellow w-8 h-8'> <FaSortAmountDown /> </button>
+        {role === "admin" && (
         <button className='flex items-center justify-center rounded-full bg-yellow w-8 h-8'> <FaPlus /> </button>
+        )}
         </div>
         </div>
       </div>

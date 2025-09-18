@@ -4,29 +4,26 @@ import { FaEdit, FaEye, FaPlus, FaSortAmountDown, FaTrash } from 'react-icons/fa
 import Image from 'next/image'
 import Pagination from '@/components/Pagination'
 import Table from '@/components/Table'
-import { role, studentsData } from '@/lib/data'
+import { classesData, role } from '@/lib/data'
 import Link from 'next/link'
 
-type Student = {
+type Class = {
   id: number;
-  studentId: string;
   name: string;
-  email?: string;
-  photo: string;
-  phone?: string;
+  capacity: number;
   grade: number;
-  class: string;
-  address: string;
+  supervisor: string;
 }; 
 
 const columns = [
   {
-    header: "Info",
+    header: "Class Name",
     accessor: "info",
   },
+
   {
-    header: "Student ID",
-    accessor: "studentId",
+    header: "Capacity",
+    accessor: "capacity",
     className: "hidden md:table-cell",
   },
   {
@@ -35,19 +32,9 @@ const columns = [
     className: "hidden md:table-cell",
   },
   {
-    header: "Class",
-    accessor: "class",
+    header: "Supervisor",
+    accessor: "supervisor",
     className: "hidden md:table-cell",
-  },
-  {
-    header: "Phone",
-    accessor: "phone",
-    className: "hidden lg:table-cell",
-  },
-  {
-    header: "Address",
-    accessor: "address",
-    className: "hidden lg:table-cell",
   },
   {
     header: "Actions",
@@ -55,41 +42,31 @@ const columns = [
   },
 ];
 
-const StudentsListPage = () => {
-  const renderRow = (item: Student) => (
+const ClassesListPage = () => {
+  const renderRow = (item: Class) => (
     <tr
       key={item.id}
       className="border-b border-gray-200 even:bg-[#F7F4EA] odd:bg-[#F3F2EC] text-sm hover:bg-amber-50"
     >
       <td className="flex items-center gap-4 p-4">
-        <Image
-          src={item.photo}
-          alt=""
-          width={40}
-          height={40}
-          className="md:hidden xl:block w-8 h-8 rounded-full object-cover"
-        />
         <div className="flex flex-col">
           <h3 className="font-semibold">{item.name}</h3>
-          <p className="text-xs text-gray-500">{item?.class}</p>
         </div>
       </td>
-      <td className="hidden md:table-cell">{item.studentId}</td>
+      <td className="hidden md:table-cell">{item.capacity}</td>
       <td className="hidden md:table-cell">{item.grade}</td>
-      <td className="hidden md:table-cell">{item.class}</td>
-      <td className="hidden md:table-cell">{item.phone}</td>
-      <td className="hidden md:table-cell">{item.address}</td>
+      <td className="hidden md:table-cell">{item.supervisor}</td>
       <td>
         <div className="flex items-center gap-2">
-          <Link href={`/list/students/${item.id}`}>
+          <Link href={`/list/classes/${item.id}`}>
             <button className="w-7 h-7 flex items-center justify-center rounded-full bg-gray-300">
               <FaEye />
             </button>
           </Link>
           {role === "admin" && (
             <>  {/* edit and delete */}
-            <Link href={`/list/students/${item.id}`} className='flex items-center justify-center rounded-full bg-gray-300 w-8 h-8'> <FaEdit className='text-blue' /> </Link>
-            <Link href={`/list/students/${item.id}`} className='flex items-center justify-center rounded-full bg-gray-300 w-8 h-8'> <FaTrash className='text-red-500' /> </Link>
+            <Link href={`/list/classes/${item.id}`} className='flex items-center justify-center rounded-full bg-gray-300 w-8 h-8'> <FaEdit className='text-blue' /> </Link>
+            <Link href={`/list/classes/${item.id}`} className='flex items-center justify-center rounded-full bg-gray-300 w-8 h-8'> <FaTrash className='text-red-500' /> </Link>
           </>
           )}
         </div>
@@ -100,7 +77,7 @@ const StudentsListPage = () => {
     <div className='bg-white p-4 rounded-md flex-1 m-4 mt-0'>
       {/* TOP */}
       <div className='flex justify-between items-center'>
-        <h1 className='hidden md:block text-lg font-semibold'>All Students</h1>
+        <h1 className='hidden md:block text-lg font-semibold'>All Classes</h1>
 
         <div className='flex flex-col md:flex-row gap-4 items-center w-full md:w-auto'>
           <TableSearch />
@@ -114,12 +91,12 @@ const StudentsListPage = () => {
         </div>
       </div>
       {/* LIST */}
-      <Table columns={columns} renderRow={renderRow} data={studentsData} />
+      <Table columns={columns} renderRow={renderRow} data={classesData} />
       {/* Pagination */}
       <Pagination />
     </div>
   )
 }
 
-export default StudentsListPage
+export default ClassesListPage
 

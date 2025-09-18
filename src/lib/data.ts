@@ -130,7 +130,6 @@ export const studentsData = [
     id: 1,
     studentId: "STU001",
     name: "Arif Hossain",
-    email: "arif.hossain@student.edu.bd",
     photo:
       "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: "01711111111",

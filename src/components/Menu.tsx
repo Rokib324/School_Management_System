@@ -17,61 +17,67 @@ const menuItems = [
             {
                 icon: <PiStudentFill />,
                 label: "Student",
-                href: "/student",
+                href: "/list/students",
                 visible: ["admin", "teacher"]
             },
             {
                 icon: <RiParentFill />,
                 label: "Parent",
-                href: "/parent",
+                href: "/list/parents",
+                visible: ["admin", "teacher"]
+            },
+            {
+                icon: <FaBook />,
+                label: "Subjects",
+                href: "/list/subjects",
                 visible: ["admin", "teacher"]
             },
             {
                 icon: <FaUser />,
                 label: "Classes",
-                href: "/classes",
+                href: "/list/classes",
                 visible: ["admin", "teacher", "student", "parent"]
             },
             {
-                icon: <FaBook />,
+                icon: <FaClipboardList />,
                 label: "Lessons",
-                href: "/lessons",
+                href: "/list/lessons",
                 visible: ["admin", "teacher", "student"]
             },
             {
                 icon: <FaClipboardList />,
                 label: "Exams",
-                href: "/exams",
+                href: "/list/exams",
                 visible: ["admin", "teacher", "student", "parent"]
             },
             {
                 icon: <FaTasks />,
                 label: "Assignments",
-                href: "/assignments",
+                href: "/list/assignments",
                 visible: ["admin", "teacher", "student", "parent"]
             },
             {
                 icon: <FaClipboardCheck />,
                 label: "Attendance",
-                href: "/attendance",
+                href: "/list/attendance",
                 visible: ["admin", "teacher", "student", "parent"]
             },
             {
                 icon: <FaCalendarAlt />,
                 label: "Events",
-                href: "/events",
+                href: "/list/events",
                 visible: ["admin", "student", "parent"]
             },
             {
                 icon: <FaComments />,
                 label: "Messages",
-                href: "/messages",
+                href: "/list/messages",
                 visible: ["admin"]
             },
             {
                 icon: <FaBullhorn />,
                 label: "Announcements",
-                href: "/announcements",
+                href: "/list/announcements",
                 visible: ["admin", "teacher", "student", "parent"]
             }
         ]
