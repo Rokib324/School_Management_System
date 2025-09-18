@@ -18,6 +18,8 @@
   --color-purple-light: #F1F0FF;
   --color-yellow: #FAE27C;
   --color-yellow-light: #FEFCE8;
+  --color-blue: #007BFF;
+  --color-blue-light: #E6F7FF;
 }
 
 @media (prefers-color-scheme: dark) {

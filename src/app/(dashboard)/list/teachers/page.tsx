@@ -1,6 +1,6 @@
 import TableSearch from '@/components/TableSearch'
 import React from 'react'
-import { FaEdit, FaPlus, FaSortAmountDown, FaTrash } from 'react-icons/fa'
+import { FaEdit, FaEye, FaPlus, FaSortAmountDown, FaTrash } from 'react-icons/fa'
 import Image from 'next/image'
 import Pagination from '@/components/Pagination'
 import Table from '@/components/Table'
@@ -59,7 +59,7 @@ const TeacherListPage = () => {
   const renderRow = (item: Teacher) => (
     <tr
       key={item.id}
-      className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight"
+      className="border-b border-gray-200 even:bg-[#F7F4EA] odd:bg-[#F3F2EC] text-sm hover:bg-amber-50"
     >
       <td className="flex items-center gap-4 p-4">
         <Image
@@ -67,7 +67,7 @@ const TeacherListPage = () => {
           alt=""
           width={40}
           height={40}
-          className="md:hidden xl:block w-10 h-10 rounded-full object-cover"
+          className="md:hidden xl:block w-8 h-8 rounded-full object-cover"
         />
         <div className="flex flex-col">
           <h3 className="font-semibold">{item.name}</h3>
@@ -82,14 +82,14 @@ const TeacherListPage = () => {
       <td>
         <div className="flex items-center gap-2">
           <Link href={`/list/teachers/${item.id}`}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
-              <Image src="/view.png" alt="" width={16} height={16} />
+            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-gray-300">
+              <FaEye />
             </button>
           </Link>
           {role === "admin" && (
             <>  {/* edit and delete */}
-            <Link href={`/list/teachers/${item.id}`} className='flex items-center justify-center rounded-full bg-yellow w-8 h-8'> <FaEdit /> </Link>
-            <Link href={`/list/teachers/${item.id}`} className='flex items-center justify-center rounded-full bg-red-500 w-8 h-8'> <FaTrash /> </Link>
+            <Link href={`/list/teachers/${item.id}`} className='flex items-center justify-center rounded-full bg-gray-300 w-8 h-8'> <FaEdit className='text-blue' /> </Link>
+            <Link href={`/list/teachers/${item.id}`} className='flex items-center justify-center rounded-full bg-gray-300 w-8 h-8'> <FaTrash className='text-red-500' /> </Link>
           </>
           )}
         </div>
