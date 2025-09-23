@@ -1,3 +1,4 @@
+'use client'
 import TableSearch from '@/components/TableSearch'
 import React from 'react'
 import { FaEdit, FaEye, FaPlus, FaSortAmountDown, FaTrash } from 'react-icons/fa'
@@ -6,6 +7,7 @@ import Pagination from '@/components/Pagination'
 import Table from '@/components/Table'
 import { role, studentsData } from '@/lib/data'
 import Link from 'next/link'
+import FormModal from '@/components/FormModal'
 
 type Student = {
   id: number;
@@ -88,8 +90,10 @@ const StudentsListPage = () => {
           </Link>
           {role === "admin" && (
             <>  {/* edit and delete */}
-            <Link href={`/list/students/${item.id}`} className='flex items-center justify-center rounded-full bg-gray-300 w-8 h-8'> <FaEdit className='text-blue' /> </Link>
-            <Link href={`/list/students/${item.id}`} className='flex items-center justify-center rounded-full bg-gray-300 w-8 h-8'> <FaTrash className='text-red-500' /> </Link>
+            {/* <Link href={`/list/students/${item.id}`} className='flex items-center justify-center rounded-full bg-gray-300 w-8 h-8'> <FaEdit className='text-blue' /> </Link> */}
+            <FormModal table="student" type="update" id={item.id} />
+            {/* <Link href={`/list/students/${item.id}`} className='flex items-center justify-center rounded-full bg-gray-300 w-8 h-8'> <FaTrash className='text-red-500' /> </Link> */}
+            <FormModal table="student" type="delete" id={item.id} />
           </>
           )}
         </div>
@@ -108,7 +112,8 @@ const StudentsListPage = () => {
         <button className='flex items-center justify-center rounded-full bg-yellow w-8 h-8'> <Image src="/filter.png" alt="filter" width={14} height={14} /> </button>
         <button className='flex items-center justify-center rounded-full bg-yellow w-8 h-8'> <FaSortAmountDown /> </button>
         {role === "admin" && (
-        <button className='flex items-center justify-center rounded-full bg-yellow w-8 h-8'> <FaPlus /> </button>
+        // <button className='flex items-center justify-center rounded-full bg-yellow w-8 h-8'> <FaPlus /> </button>
+        <FormModal table="student" type="create" />
         )}
         </div>
         </div>

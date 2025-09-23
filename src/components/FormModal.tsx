@@ -51,7 +51,7 @@ const FormModal = ({
         className={`${size} flex items-center justify-center rounded-full ${bgColor}`}
         onClick={() => setOpen(true)}
       >
-        <Icon className="text-white w-5 h-5" />
+        <Icon className="text-white w-5 h-5 cursor-pointer" />
       </button>
     </div>
   );
