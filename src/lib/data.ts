@@ -1057,4 +1057,31 @@ export const calendarEvents = [
     start: new Date(2025, 8, 23, 14, 0),
     end: new Date(2025, 8, 23, 14, 45),
   },
+  {
+    title: "Math",
+    allDay: false,
+    start: new Date(2025, 8, 24, 8, 0),
+    end: new Date(2025, 8, 24, 8, 45),
+  },
+  {
+    title: "English",
+    allDay: false,
+    start: new Date(2025, 8, 24, 9, 0),
+    end: new Date(2025, 8, 24, 9, 45),
+  },{
+    title: "Biology",
+    allDay: false,
+    start: new Date(2025, 8, 24, 10, 0),
+    end: new Date(2025, 8, 24, 10, 45),
+  },{
+    title: "Physics",
+    allDay: false,
+    start: new Date(2025, 8, 24, 11, 0),
+    end: new Date(2025, 8, 24, 11, 45),
+  },{
+    title: "Chemistry",
+    allDay: false,
+    start: new Date(2025, 8, 24, 13, 0),
+    end: new Date(2025, 8, 24, 13, 45),
+  },
 ];

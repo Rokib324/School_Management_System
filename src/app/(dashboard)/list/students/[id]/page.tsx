@@ -10,7 +10,7 @@ import Link from 'next/link'
 import Announcement from '@/components/Announcement'
 import Performance from '@/components/Performance'
 
-const SingleTeacherPage = () => {
+const SingleStudentPage = () => {
   return (
     <div className='flex-1 p-4 flex flex-col gap-4 xl:flex-row'>
         {/* LEFT SIDE */}
@@ -83,7 +83,7 @@ const SingleTeacherPage = () => {
         </div>
         {/* Bottom */}
         <div className="mt-4 bg-white rounded-md p-4 h-[800px]">
-          <h1>Teacher&apos;s Schedule</h1>
+          <h1>Student&apos;s Schedule</h1>
           <BigCalendar />
         </div>
       </div>
@@ -93,19 +93,19 @@ const SingleTeacherPage = () => {
           <h1 className="text-xl font-semibold">Shortcuts</h1>
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
             <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">
-              Teacher&apos;s Classes
+            Student&apos;s Classes
             </Link>
             <Link className="p-3 rounded-md bg-lamaPurpleLight" href="/">
-              Teacher&apos;s Students
+              Student&apos;s Students
             </Link>
             <Link className="p-3 rounded-md bg-lamaYellowLight" href="/">
-              Teacher&apos;s Lessons
+              Student&apos;s Lessons
             </Link>
             <Link className="p-3 rounded-md bg-pink-50" href="/">
-              Teacher&apos;s Exams
+              Student&apos;s Exams
             </Link>
             <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">
-              Teacher&apos;s Assignments
+            Student&apos;s Assignments
             </Link>
           </div>
         </div>
@@ -116,4 +116,4 @@ const SingleTeacherPage = () => {
   )
 }
 
-export default SingleTeacherPage
+export default SingleStudentPage
