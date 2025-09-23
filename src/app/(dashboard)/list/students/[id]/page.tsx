@@ -20,7 +20,7 @@ const SingleStudentPage = () => {
         {/* user Info Card */}
         <div className='bg-sky py-6 px-4 rounded-md flex-1 flex gap-4'>
             <div className='w-1/3'>
-            <Image src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" alt="user" width={140} height={144} className='w-36 h-36 rounded-full object-cover' />
+            <Image src={'https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200'} alt="user" width={144} height={144} className='w-36 h-36 rounded-full object-cover' />
             </div>
             <div className='w-2/3 flex flex-col justify-between gap-4'>
             <h1 className='text-xl font-semibold'>Md. Alia Akter</h1>
@@ -93,16 +93,16 @@ const SingleStudentPage = () => {
           <h1 className="text-xl font-semibold">Shortcuts</h1>
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
             <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">
-            Student&apos;s Classes
+            Student&apos;s Lessons
             </Link>
             <Link className="p-3 rounded-md bg-lamaPurpleLight" href="/">
-              Student&apos;s Students
+              Student&apos;s Classes
             </Link>
             <Link className="p-3 rounded-md bg-lamaYellowLight" href="/">
-              Student&apos;s Lessons
+              Student&apos;s Results
             </Link>
             <Link className="p-3 rounded-md bg-pink-50" href="/">
-              Student&apos;s Exams
+              Student&apos;s Attendance
             </Link>
             <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">
             Student&apos;s Assignments
