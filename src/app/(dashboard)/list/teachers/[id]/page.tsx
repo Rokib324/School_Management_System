@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import { MdBloodtype, MdDateRange, MdPhone } from 'react-icons/md'
@@ -9,6 +10,8 @@ import BigCalendar from '@/components/BigCalendar'
 import Link from 'next/link'
 import Announcement from '@/components/Announcement'
 import Performance from '@/components/Performance'
+import FormModal from '@/components/FormModal'
+import { teachersData } from '@/lib/data'
 
 const SingleTeacherPage = () => {
   return (
@@ -23,7 +26,10 @@ const SingleTeacherPage = () => {
             <Image src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" alt="user" width={140} height={144} className='w-36 h-36 rounded-full object-cover' />
             </div>
             <div className='w-2/3 flex flex-col justify-between gap-4'>
+            <div className='flex items-center gap-2'>
             <h1 className='text-xl font-semibold'>Md. Alia Akter</h1>
+            <FormModal table="teacher" type="update" data={teachersData[0]} />
+            </div>
             <p className='text-sm text-gray-500'>An Engineering Teacher in Computer Science the University of London.</p>
             <div className='flex items-center justify-between gap-2 flex-wrap text-xs font font-medium'>
               <div className='w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2'>

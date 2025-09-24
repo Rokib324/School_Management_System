@@ -14,7 +14,7 @@ export default function DashboardLayout({
         <div className="w-[14%] md:w-[10%] lg:w-[14%] xl:w-[14%]">
             <Link href="/" className="flex items-center justify-center lg:justify-start gap-2 p-4">
             <Image src="/TCA-Logo.png" alt="logo" width={30} height={30} />
-            <span className="hidden md:block">The Carter Academy</span>
+            <span className="hidden md:block font-bold">The Carter Academy</span>
             </Link> 
             <Menu />
         </div>

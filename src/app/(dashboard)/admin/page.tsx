@@ -16,7 +16,7 @@ const AdminPage = () => {
     <UserCard type="admin" />
     <UserCard type="teacher" />
     <UserCard type="student" />
-    <UserCard type="Staff" />
+    <UserCard type="parents" />
     </div>
     {/* Charts */}
     {/* Middle Charts */} 
