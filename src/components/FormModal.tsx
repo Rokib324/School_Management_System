@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 import { IoIosAdd, IoIosClose } from "react-icons/io";
 import { GrDocumentUpdate } from "react-icons/gr";
