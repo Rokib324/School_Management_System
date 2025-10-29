@@ -1,8 +1,14 @@
 'use client'
-import React, { useState } from 'react'
-import { Calendar } from 'react-calendar';
+import React, { useState, useEffect } from 'react'
+import dynamic from 'next/dynamic';
 import { IoIosAdd, IoIosMore } from 'react-icons/io'
 import 'react-calendar/dist/Calendar.css';
+
+// Dynamically import Calendar with SSR disabled to prevent hydration mismatch
+const Calendar = dynamic(() => import('react-calendar').then(mod => mod.Calendar), {
+  ssr: false,
+  loading: () => <div className="h-[300px] flex items-center justify-center">Loading calendar...</div>
+});
 
 
 //Temporary events
@@ -41,6 +47,26 @@ type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 const EventCalendar = () => {
     const [value, onChange] = useState<Value>(new Date());
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return (
+            <div className='bg-white rounded-lg p-4'>
+                <div className='flex justify-between items-center'>
+                    <h1 className='text-2xl font-semibold'>Event Calendar</h1>
+                    <span><IoIosMore /></span>
+                </div>
+                <div className='bg-white rounded-lg w-full h-[75%]'>
+                    <div className="h-[300px] flex items-center justify-center">Loading calendar...</div>
+                </div>
+            </div>
+        );
+    }
+
   return (
     <div className='bg-white rounded-lg p-4'>
       <div className='flex justify-between items-center'>

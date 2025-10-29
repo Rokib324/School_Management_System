@@ -86,9 +86,9 @@ const renderRow = (item: TeacherList) => (
         {role === "admin" && (
           <>  {/* edit and delete */}
           {/* <Link href={`/list/teachers/${item.id}`} className='flex items-center justify-center rounded-full bg-gray-300 w-8 h-8'> <FaEdit className='text-blue' /> </Link> */}
-          <FormModal table="teacher" type="update" id={item.id} />
+          <FormModal table="teacher" type="update" id={Number(item.id)} />
           {/* <Link href={`/list/teachers/${item.id}`} className='flex items-center justify-center rounded-full bg-gray-300 w-8 h-8'> <FaTrash className='text-red-500' /> </Link> */}
-          <FormModal table="teacher" type="delete" id={item.id} />
+          <FormModal table="teacher" type="delete" id={Number(item.id)} />
         </>
         )}
       </div>
@@ -100,6 +100,9 @@ const TeacherListPage = async ({searchParams}: {searchParams: {page?: string} | 
   const page = searchParams?.page ? parseInt(searchParams.page) : 1;
   
   const data = await prisma.teacher.findMany({
+    where: {
+      id: "teacher1"
+    },
     include: {
       subjects: true,
       classes: true,
